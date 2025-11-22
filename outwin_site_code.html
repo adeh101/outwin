@@ -1,0 +1,1099 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <title>OutWin Solutions | Fire Yourself From the Day-to-Day</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta
+    name="description"
+    content="OutWin Solutions helps business owners fire themselves from the day-to-day by building reliable teams, clear operations and confident leadership."
+  />
+  <style>
+    :root {
+      --navy: #0b2341;
+      --navy-soft: #172e4f;
+      --accent-grey: #e0e4ee;
+      --accent-grey-dark: #6f7b8f;
+      --background: #f7f8fb;
+      --white: #ffffff;
+      --max-width: 1140px;
+      --radius-pill: 999px;
+      --radius-soft: 12px;
+      --shadow-soft: 0 12px 30px rgba(5, 20, 45, 0.08);
+      --font-heading: system-ui, -apple-system, BlinkMacSystemFont, "SF Pro Text",
+        "Segoe UI", sans-serif;
+      --font-body: system-ui, -apple-system, BlinkMacSystemFont, "SF Pro Text",
+        "Segoe UI", sans-serif;
+    }
+
+    * {
+      box-sizing: border-box;
+    }
+
+    body {
+      margin: 0;
+      font-family: var(--font-body);
+      color: var(--navy);
+      background: var(--background);
+      line-height: 1.6;
+    }
+
+    img {
+      max-width: 100%;
+      display: block;
+    }
+
+    a {
+      text-decoration: none;
+      color: inherit;
+    }
+
+    /* Layout Helpers */
+
+    .container {
+      max-width: var(--max-width);
+      margin: 0 auto;
+      padding: 0 1.5rem;
+    }
+
+    section {
+      padding: 4.5rem 0;
+    }
+
+    h1,
+    h2,
+    h3 {
+      font-family: var(--font-heading);
+      margin-top: 0;
+      letter-spacing: -0.02em;
+    }
+
+    h1 {
+      font-size: clamp(2.4rem, 3.2vw + 1.4rem, 3.4rem);
+      line-height: 1.1;
+    }
+
+    h2 {
+      font-size: clamp(1.8rem, 2.2vw + 1rem, 2.4rem);
+      margin-bottom: 0.75rem;
+    }
+
+    h3 {
+      font-size: 1.25rem;
+      margin-bottom: 0.4rem;
+    }
+
+    p {
+      margin: 0.2rem 0 0.9rem;
+      color: #32425d;
+    }
+
+    /* Header / Nav */
+
+    header {
+      position: sticky;
+      top: 0;
+      z-index: 50;
+      background: rgba(255, 255, 255, 0.96);
+      backdrop-filter: blur(16px);
+      box-shadow: 0 1px 0 rgba(11, 35, 65, 0.05);
+    }
+
+    .top-bar {
+      background: var(--navy);
+      color: var(--white);
+      font-size: 0.85rem;
+    }
+
+    .top-bar-inner {
+      display: flex;
+      justify-content: flex-end;
+      gap: 1.5rem;
+      align-items: center;
+      padding: 0.35rem 1.5rem;
+      max-width: var(--max-width);
+      margin: 0 auto;
+    }
+
+    .top-bar-inner span {
+      display: inline-flex;
+      align-items: center;
+      gap: 0.4rem;
+      opacity: 0.9;
+    }
+
+    .nav {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      padding: 0.9rem 1.5rem;
+      max-width: var(--max-width);
+      margin: 0 auto;
+    }
+
+    .logo {
+      display: flex;
+      flex-direction: column;
+      font-weight: 700;
+      color: var(--navy);
+    }
+
+    .logo span {
+      font-size: 0.75rem;
+      font-weight: 500;
+      color: var(--accent-grey-dark);
+      letter-spacing: 0.18em;
+      text-transform: uppercase;
+    }
+
+    .nav-links {
+      display: flex;
+      align-items: center;
+      gap: 1.5rem;
+      font-size: 0.95rem;
+    }
+
+    .nav-links a {
+      color: #283654;
+      position: relative;
+      padding-bottom: 0.1rem;
+    }
+
+    .nav-links a::after {
+      content: "";
+      position: absolute;
+      left: 0;
+      bottom: -0.2rem;
+      width: 0;
+      height: 2px;
+      background: var(--navy);
+      border-radius: 999px;
+      transition: width 0.2s ease;
+    }
+
+    .nav-links a:hover::after {
+      width: 100%;
+    }
+
+    .nav-contact-btn {
+      padding: 0.45rem 1.2rem;
+      border-radius: var(--radius-pill);
+      border: none;
+      background: var(--accent-grey);
+      color: var(--navy);
+      font-weight: 600;
+      cursor: pointer;
+      box-shadow: 0 1px 3px rgba(5, 20, 45, 0.12);
+      transition: background 0.18s ease, transform 0.12s ease,
+        box-shadow 0.18s ease;
+    }
+
+    .nav-contact-btn:hover {
+      background: #d0d7e9;
+      transform: translateY(-1px);
+      box-shadow: 0 4px 10px rgba(5, 20, 45, 0.15);
+    }
+
+    .nav-toggle {
+      display: none;
+      border: none;
+      background: transparent;
+      font-size: 1.5rem;
+      cursor: pointer;
+    }
+
+    /* Hero Section */
+
+    .hero {
+      position: relative;
+      overflow: hidden;
+      padding: 4.5rem 0 4rem;
+    }
+
+    .hero::before {
+      content: "";
+      position: absolute;
+      inset: 0;
+      background: linear-gradient(
+          120deg,
+          rgba(247, 248, 251, 0.96),
+          rgba(245, 232, 222, 0.9)
+        ),
+        url("/mnt/data/Monosnap%20e8c0a21ef0e0f5101a0d9e590435203ca7bf96af%202025-11-23%2008-39-31.png") center/cover no-repeat;
+      opacity: 0.95;
+      z-index: -1;
+    }
+
+    .hero-inner {
+      display: grid;
+      grid-template-columns: minmax(0, 1.1fr) minmax(0, 0.9fr);
+      gap: 3.5rem;
+      align-items: center;
+    }
+
+    .hero-eyebrow {
+      text-transform: uppercase;
+      letter-spacing: 0.18em;
+      font-size: 0.8rem;
+      color: var(--accent-grey-dark);
+      font-weight: 600;
+      margin-bottom: 0.4rem;
+    }
+
+    .hero h1 {
+      margin-bottom: 0.8rem;
+    }
+
+    .hero-subtitle {
+      font-size: 1.05rem;
+      max-width: 32rem;
+      margin-bottom: 1.2rem;
+    }
+
+    .hero-bullets {
+      list-style: none;
+      padding: 0;
+      margin: 0 0 1.6rem;
+      color: #39506f;
+      display: grid;
+      gap: 0.35rem;
+    }
+
+    .hero-bullets li::before {
+      content: "•";
+      color: var(--navy);
+      margin-right: 0.4rem;
+    }
+
+    .hero-ctas {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 0.9rem;
+      align-items: center;
+      margin-bottom: 1.4rem;
+    }
+
+    .btn-primary,
+    .btn-secondary {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      padding: 0.9rem 1.7rem;
+      border-radius: var(--radius-pill);
+      font-weight: 600;
+      font-size: 0.98rem;
+      border: 1px solid transparent;
+      cursor: pointer;
+      transition: background 0.18s ease, color 0.18s ease,
+        box-shadow 0.18s ease, transform 0.12s ease, border-color 0.15s ease;
+      text-align: center;
+    }
+
+    .btn-primary {
+      background: var(--navy);
+      color: var(--white);
+      box-shadow: var(--shadow-soft);
+    }
+
+    .btn-primary:hover {
+      background: var(--navy-soft);
+      transform: translateY(-1px);
+      box-shadow: 0 18px 40px rgba(5, 20, 45, 0.2);
+    }
+
+    .btn-secondary {
+      background: transparent;
+      color: var(--navy);
+      border-color: var(--navy);
+    }
+
+    .btn-secondary:hover {
+      background: #dfe6f3;
+    }
+
+    .hero-note {
+      font-size: 0.9rem;
+      color: #4c607e;
+    }
+
+    .hero-card {
+      background: rgba(255, 255, 255, 0.96);
+      border-radius: 18px;
+      padding: 1.8rem 1.6rem;
+      box-shadow: var(--shadow-soft);
+      border: 1px solid rgba(185, 196, 219, 0.6);
+    }
+
+    .hero-card h3 {
+      margin-bottom: 0.2rem;
+    }
+
+    .hero-card ul {
+      padding-left: 1.1rem;
+      margin: 0.3rem 0 0.9rem;
+      color: #42557a;
+    }
+
+    .hero-card li {
+      margin-bottom: 0.3rem;
+    }
+
+    .hero-tag {
+      display: inline-flex;
+      align-items: center;
+      gap: 0.35rem;
+      font-size: 0.82rem;
+      padding: 0.35rem 0.85rem;
+      border-radius: var(--radius-pill);
+      background: rgba(222, 234, 255, 0.8);
+      color: #1f3c78;
+      margin-bottom: 0.45rem;
+      font-weight: 500;
+    }
+
+    /* Two-column content sections */
+
+    .split {
+      display: grid;
+      grid-template-columns: minmax(0, 1.1fr) minmax(0, 0.9fr);
+      gap: 3rem;
+      align-items: flex-start;
+    }
+
+    .section-eyebrow {
+      text-transform: uppercase;
+      letter-spacing: 0.18em;
+      font-size: 0.8rem;
+      color: var(--accent-grey-dark);
+      font-weight: 600;
+      margin-bottom: 0.4rem;
+    }
+
+    .card {
+      background: var(--white);
+      border-radius: var(--radius-soft);
+      padding: 1.6rem 1.5rem;
+      box-shadow: var(--shadow-soft);
+      border: 1px solid rgba(185, 196, 219, 0.6);
+    }
+
+    .pill-list {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 0.5rem;
+      margin-top: 0.6rem;
+    }
+
+    .pill {
+      padding: 0.3rem 0.7rem;
+      background: #e6ecf8;
+      border-radius: var(--radius-pill);
+      font-size: 0.8rem;
+      color: #30405f;
+    }
+
+    /* Grid sections */
+
+    .grid-3 {
+      display: grid;
+      grid-template-columns: repeat(3, minmax(0, 1fr));
+      gap: 1.6rem;
+    }
+
+    .grid-2 {
+      display: grid;
+      grid-template-columns: repeat(2, minmax(0, 1fr));
+      gap: 1.4rem;
+    }
+
+    /* Who We Work With */
+
+    .check-list {
+      list-style: none;
+      padding-left: 0;
+      margin: 0.6rem 0 0;
+    }
+
+    .check-list li {
+      margin-bottom: 0.4rem;
+      position: relative;
+      padding-left: 1.4rem;
+      color: #3a4b68;
+      font-size: 0.95rem;
+    }
+
+    .check-list li::before {
+      content: "✓";
+      position: absolute;
+      left: 0;
+      top: 0;
+      color: #1b7a4a;
+      font-weight: 700;
+      font-size: 0.9rem;
+    }
+
+    /* Services */
+
+    .service-card h3 {
+      margin-top: 0;
+    }
+
+    .service-meta {
+      font-size: 0.85rem;
+      color: #5a6c88;
+      margin-bottom: 0.6rem;
+      font-weight: 500;
+      text-transform: uppercase;
+      letter-spacing: 0.08em;
+    }
+
+    .service-list {
+      list-style: none;
+      padding-left: 0;
+      margin: 0.5rem 0 0.3rem;
+      font-size: 0.95rem;
+      color: #384763;
+    }
+
+    .service-list li {
+      margin-bottom: 0.3rem;
+      position: relative;
+      padding-left: 1.1rem;
+    }
+
+    .service-list li::before {
+      content: "•";
+      position: absolute;
+      left: 0;
+      top: 0;
+      color: var(--navy);
+    }
+
+    /* Results / Benefits */
+
+    .results-grid {
+      display: grid;
+      grid-template-columns: repeat(2, minmax(0, 1fr));
+      gap: 1.5rem;
+    }
+
+    .results-grid h3 {
+      margin-bottom: 0.5rem;
+    }
+
+    /* Process */
+
+    .process-steps {
+      counter-reset: step;
+      display: grid;
+      gap: 1rem;
+    }
+
+    .process-step {
+      background: var(--white);
+      border-radius: var(--radius-soft);
+      padding: 1.1rem 1.2rem 1.1rem 3.4rem;
+      position: relative;
+      border: 1px solid rgba(185, 196, 219, 0.7);
+    }
+
+    .process-step::before {
+      counter-increment: step;
+      content: counter(step);
+      position: absolute;
+      left: 1rem;
+      top: 50%;
+      transform: translateY(-50%);
+      width: 1.9rem;
+      height: 1.9rem;
+      border-radius: 999px;
+      background: var(--navy);
+      color: var(--white);
+      font-size: 0.9rem;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-weight: 600;
+      box-shadow: 0 4px 10px rgba(5, 20, 45, 0.3);
+    }
+
+    .process-step h3 {
+      margin-bottom: 0.1rem;
+      font-size: 1rem;
+    }
+
+    .process-step p {
+      font-size: 0.95rem;
+    }
+
+    /* FAQ */
+
+    .faq-grid {
+      display: grid;
+      gap: 1rem;
+    }
+
+    .faq-item {
+      background: var(--white);
+      border-radius: var(--radius-soft);
+      padding: 1rem 1.1rem;
+      border: 1px solid rgba(185, 196, 219, 0.8);
+    }
+
+    .faq-item h3 {
+      font-size: 1rem;
+      margin-bottom: 0.3rem;
+    }
+
+    /* Contact */
+
+    .contact-grid {
+      display: grid;
+      grid-template-columns: minmax(0, 1.1fr) minmax(0, 0.9fr);
+      gap: 2rem;
+      align-items: flex-start;
+    }
+
+    form {
+      background: var(--white);
+      border-radius: 14px;
+      padding: 1.7rem 1.5rem;
+      box-shadow: var(--shadow-soft);
+      border: 1px solid rgba(185, 196, 219, 0.7);
+    }
+
+    label {
+      display: block;
+      font-size: 0.86rem;
+      font-weight: 600;
+      color: #3b4a68;
+      margin-bottom: 0.25rem;
+    }
+
+    input,
+    textarea,
+    select {
+      width: 100%;
+      padding: 0.7rem 0.75rem;
+      border-radius: 8px;
+      border: 1px solid #d0d7e6;
+      font-family: var(--font-body);
+      font-size: 0.95rem;
+      margin-bottom: 0.8rem;
+      outline: none;
+      transition: border-color 0.15s ease, box-shadow 0.15s ease;
+      background: #fdfdff;
+    }
+
+    input:focus,
+    textarea:focus,
+    select:focus {
+      border-color: var(--navy);
+      box-shadow: 0 0 0 1px rgba(11, 35, 65, 0.1);
+    }
+
+    textarea {
+      resize: vertical;
+      min-height: 140px;
+    }
+
+    .helper-text {
+      font-size: 0.82rem;
+      color: #6c7c96;
+      margin-top: -0.35rem;
+      margin-bottom: 0.8rem;
+    }
+
+    /* Footer */
+
+    footer {
+      padding: 2.2rem 0 2rem;
+      font-size: 0.85rem;
+      color: #6b7891;
+    }
+
+    .footer-inner {
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: space-between;
+      gap: 1rem;
+      align-items: center;
+      border-top: 1px solid rgba(185, 196, 219, 0.7);
+      padding-top: 1.3rem;
+    }
+
+    .footer-links {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 1.2rem;
+    }
+
+    /* Responsive */
+
+    @media (max-width: 880px) {
+      .nav {
+        padding-inline: 1rem;
+      }
+
+      .nav-links {
+        position: absolute;
+        top: 100%;
+        right: 0;
+        left: 0;
+        background: rgba(255, 255, 255, 0.98);
+        flex-direction: column;
+        padding: 0.9rem 1.5rem 1.1rem;
+        border-bottom: 1px solid rgba(185, 196, 219, 0.7);
+        display: none;
+      }
+
+      .nav-links.open {
+        display: flex;
+      }
+
+      .nav-toggle {
+        display: block;
+      }
+
+      .hero-inner,
+      .split,
+      .results-grid,
+      .grid-3,
+      .grid-2,
+      .contact-grid {
+        grid-template-columns: minmax(0, 1fr);
+      }
+
+      .hero {
+        padding-top: 3.8rem;
+      }
+
+      .hero-card {
+        margin-top: 0.8rem;
+      }
+
+      section {
+        padding: 3.6rem 0;
+      }
+    }
+
+    @media (max-width: 520px) {
+      .hero-ctas {
+        flex-direction: column;
+        align-items: stretch;
+      }
+
+      .top-bar-inner {
+        justify-content: center;
+        text-align: center;
+        padding-inline: 1rem;
+      }
+    }
+  </style>
+</head>
+<body>
+  <!-- Header -->
+  <header>
+    <div class="top-bar">
+      <div class="top-bar-inner">
+        <span>admin@OutWinSolutions.com.au</span>
+        <span>0431 990 454</span>
+      </div>
+    </div>
+    <div class="nav">
+      <a href="#top" class="logo">
+        OutWin
+        <span>Solutions</span>
+      </a>
+
+      <button class="nav-toggle" aria-label="Toggle navigation" onclick="document.querySelector('.nav-links').classList.toggle('open')">
+        ☰
+      </button>
+
+      <nav class="nav-links">
+        <a href="#about">About Us</a>
+        <a href="#what-we-do">What We Do</a>
+        <a href="#how-we-work">How We Work</a>
+        <a href="#who-we-work-with">Who We Work With</a>
+        <a href="#contact">
+          <button class="nav-contact-btn" type="button">Contact</button>
+        </a>
+      </nav>
+    </div>
+  </header>
+
+  <main id="top">
+    <!-- Hero Section -->
+    <section class="hero">
+      <div class="container hero-inner">
+        <div>
+          <div class="hero-eyebrow">Business Coaching & Operational Clarity</div>
+          <h1>Fire Yourself From the Day-to-Day</h1>
+          <p class="hero-subtitle">
+            Get your time back. Build a team you trust. Lead with clarity instead of chaos.
+          </p>
+          <ul class="hero-bullets">
+            <li>Step out of the weeds and into your role as a real business owner.</li>
+            <li>Turn your team into a reliable engine that runs without you.</li>
+            <li>Create clear, simple systems so everyone knows what “great” looks like.</li>
+          </ul>
+          <div class="hero-ctas">
+            <a href="#contact" class="btn-primary">Book Your Call</a>
+            <a href="#what-we-do" class="btn-secondary">Learn More</a>
+          </div>
+          <p class="hero-note">
+            No pressure, just a conversation about where you’re at and what you want to change.
+          </p>
+        </div>
+
+        <aside class="hero-card">
+          <img src="/mnt/data/Monosnap%20e8c0a21ef0e0f5101a0d9e590435203ca7bf96af%202025-11-23%2008-39-31.png" alt="Business coaching hero image" style="border-radius:12px;margin-bottom:1rem;" />
+          <div class="hero-tag">Designed for busy business owners</div>
+          <h3>Is your business running you?</h3>
+          <p>
+            You’ve built something real — but now you’re stuck in the day-to-day. Staff questions, operational fires, constant interruptions.
+          </p>
+          <p><strong>OutWin Solutions</strong> helps you:</p>
+          <ul>
+            <li>Step out of the daily grind without the business falling over.</li>
+            <li>Build a team that takes ownership instead of waiting for instructions.</li>
+            <li>Put calm, clear structure around the chaos.</li>
+          </ul>
+          <p style="font-size:0.9rem;color:#5a6c88;margin-bottom:0;">
+            Together, we turn your business into something you trust to run without you glued to it 24/7.
+          </p>
+        </aside>
+      </div>
+    </section>
+
+    <!-- About Us -->
+    <section id="about">
+      <div class="container split">
+        <div>
+          <div class="section-eyebrow">About Us</div>
+          <h2>OutWin Solutions exists to give owners their life back</h2>
+          <p>
+            OutWin Solutions was created for business owners who never planned on becoming full-time firefighters. You wanted a business that worked for you — not one that falls over the second you take a day off.
+          </p>
+          <p>
+            We work alongside you to simplify operations, strengthen your team, and put in place clear expectations and rhythms. The goal is simple: <strong>you become the leader, not the bottleneck.</strong>
+          </p>
+          <p>
+            Our style is practical, honest, and supportive. No corporate jargon. No cookie-cutter frameworks. Just grounded, hands-on coaching that fits how your business actually runs.
+          </p>
+        </div>
+
+        <div class="card">
+          <!-- Image: coach working with leadership team around a table -->
+          <h3>How we’re different</h3>
+          <p>
+            We sit in the gap between “business coaching” and “operations consulting”. That means we don’t just talk strategy — we help you turn ideas into clear, repeatable ways of working.
+          </p>
+          <div class="pill-list">
+            <span class="pill">Calm, non-corporate approach</span>
+            <span class="pill">Real-world leadership experience</span>
+            <span class="pill">Implementation support</span>
+            <span class="pill">Accountability that sticks</span>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Who We Work With -->
+    <section id="who-we-work-with">
+      <div class="container">
+        <div class="section-eyebrow">Who We Work With</div>
+        <h2>Owners who are ready to stop being the only grown-up in the room</h2>
+        <p style="max-width:40rem;">
+          We work best with established businesses where the phone is ringing, the work is there, and the real problem is
+          <strong>how</strong> everything runs — not whether there’s demand.
+        </p>
+
+        <div class="grid-2" style="margin-top:1.6rem;">
+          <div class="card">
+            <h3>You might be here because…</h3>
+            <ul class="check-list">
+              <li>You can’t step away for more than a couple of days without things slipping.</li>
+              <li>Your team means well, but they still rely on you for every decision.</li>
+              <li>There are no clear roles, expectations, or measures of success.</li>
+              <li>Growth has stalled because you’re out of hours and headspace.</li>
+              <li>You feel guilty that your business takes more from your family than it gives back.</li>
+            </ul>
+          </div>
+
+          <div class="card">
+            <h3>Industries we commonly support</h3>
+            <p>
+              While every business is different, we often work with:
+            </p>
+            <ul class="check-list">
+              <li>Trade and construction businesses with growing teams.</li>
+              <li>Professional services firms ready to scale beyond the founder.</li>
+              <li>Owner-led companies with 5–50 staff and moving parts.</li>
+            </ul>
+            <p style="margin-top:0.7rem;font-size:0.9rem;color:#5a6c88;">
+              If you’re not sure whether you’re a fit, the best step is a short call. We’ll be upfront either way.
+            </p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- What We Do / Services -->
+    <section id="what-we-do">
+      <div class="container">
+        <div class="section-eyebrow">What We Do</div>
+        <h2>Coaching and support that gets you out of the weeds</h2>
+        <p style="max-width:40rem;">
+          Our work is built around clear conversations, practical tools, and simple rhythms you can maintain once we’re gone. Here’s how we typically work with clients:
+        </p>
+
+        <div class="grid-3" style="margin-top:1.8rem;">
+          <div class="card service-card">
+            <div class="service-meta">1:1 Owner Coaching</div>
+            <h3>Leadership & Owner Coaching</h3>
+            <p>
+              Dedicated one-to-one coaching focused on you as the owner — your role, decision-making, boundaries and leadership.
+            </p>
+            <ul class="service-list">
+              <li>Clarify your ideal role and week.</li>
+              <li>Reset priorities away from constant firefighting.</li>
+              <li>Develop confident, calm leadership habits.</li>
+            </ul>
+            <p style="font-size:0.9rem;color:#5a6c88;">
+              Best for owners feeling stretched thin, stuck and unsure what to tackle first.
+            </p>
+          </div>
+
+          <div class="card service-card">
+            <div class="service-meta">Team & Operations</div>
+            <h3>Team Clarity & Structure</h3>
+            <p>
+              Bring order to the chaos by defining who does what, how decisions get made, and what “good” looks like across the business.
+            </p>
+            <ul class="service-list">
+              <li>Role clarity and simple org structure.</li>
+              <li>Expectations, KPIs and rhythms everyone understands.</li>
+              <li>Meeting and communication rhythms that reduce noise.</li>
+            </ul>
+            <p style="font-size:0.9rem;color:#5a6c88;">
+              Ideal when you’ve got good people, but they’re pulling in different directions.
+            </p>
+          </div>
+
+          <div class="card service-card">
+            <div class="service-meta">Intensives</div>
+            <h3>Strategy & Systems Intensives</h3>
+            <p>
+              Focused half-day or full-day sessions to tackle one big knot — whether that’s structure, growth priorities, or a key operational bottleneck.
+            </p>
+            <ul class="service-list">
+              <li>Pre-work to map where you are now.</li>
+              <li>Live working session with your key people.</li>
+              <li>Clear, simple action plan with owners and timeframes.</li>
+            </ul>
+            <p style="font-size:0.9rem;color:#5a6c88;">
+              Perfect when you need momentum and clarity fast.
+            </p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Results / Benefits -->
+    <section>
+      <div class="container">
+        <div class="section-eyebrow">Results</div>
+        <h2>From “I can’t leave” to “this runs without me”</h2>
+
+        <div class="results-grid" style="margin-top:1.6rem;">
+          <div class="card">
+            <h3>Before we work together</h3>
+            <ul class="check-list">
+              <li>Most decisions still come through you.</li>
+              <li>You’re regularly pulled back into frontline work.</li>
+              <li>There’s no clear rhythm to meetings or priorities.</li>
+              <li>Good ideas never quite make it into daily practice.</li>
+              <li>You’re tired, second-guessing yourself and your team.</li>
+            </ul>
+          </div>
+
+          <div class="card">
+            <h3>After putting structure in place</h3>
+            <ul class="check-list">
+              <li>Your role is clearly defined and respected.</li>
+              <li>Your team owns their work and solves more problems themselves.</li>
+              <li>Systems and rhythms keep everyone aligned and accountable.</li>
+              <li>You can step away knowing what will (and won’t) happen.</li>
+              <li>You lead with calm confidence instead of constant urgency.</li>
+            </ul>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- How We Work / Process -->
+    <section id="how-we-work">
+      <div class="container split">
+        <div>
+          <div class="section-eyebrow">How We Work</div>
+          <h2>Simple, calm steps — no overwhelm added</h2>
+          <p>
+            Our process is straightforward and collaborative. We’re not here to drown you in frameworks. We’re here to help you see clearly, decide confidently and implement at a pace that sticks.
+          </p>
+          <p>
+            Everything we do is tailored to your business — but it usually follows a rhythm like this:
+          </p>
+        </div>
+
+        <div class="process-steps">
+          <div class="process-step">
+            <h3>Discovery call</h3>
+            <p>
+              A 30–45 minute conversation to understand your situation, goals and constraints. If we’re not the right fit, we’ll say so.
+            </p>
+          </div>
+          <div class="process-step">
+            <h3>Clarity & priorities</h3>
+            <p>
+              Together we map where you are now, where you want to be, and the few key shifts that will make the biggest difference.
+            </p>
+          </div>
+          <div class="process-step">
+            <h3>Focused implementation</h3>
+            <p>
+              We work with you and your team to put in place the right structures, rhythms and decisions — one practical step at a time.
+            </p>
+          </div>
+          <div class="process-step">
+            <h3>Review & ongoing support</h3>
+            <p>
+              Regular check-ins to keep momentum, adjust where needed, and make sure the changes continue without needing us forever.
+            </p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- FAQ -->
+    <section>
+      <div class="container">
+        <div class="section-eyebrow">FAQ</div>
+        <h2>Questions we’re often asked</h2>
+
+        <div class="faq-grid" style="margin-top:1.4rem;">
+          <div class="faq-item">
+            <h3>How do I know if coaching is right for me?</h3>
+            <p>
+              If you’re established, busy, and frustrated that your business still leans on you for almost everything, coaching is often the fastest way to shift that. The first call is simply to see if we’re the right partner — there’s no obligation to continue.
+            </p>
+          </div>
+          <div class="faq-item">
+            <h3>Do you work online or in person?</h3>
+            <p>
+              Most ongoing work is done online so we can meet consistently without travel time. For intensives or key sessions, in-person options may be available depending on location.
+            </p>
+          </div>
+          <div class="faq-item">
+            <h3>Will this add more to my already full plate?</h3>
+            <p>
+              Our focus is on simplifying, not adding complexity. We prioritise a few high-impact changes at a time so you see progress without feeling like you’ve taken on another job.
+            </p>
+          </div>
+          <div class="faq-item">
+            <h3>How long do clients typically work with you?</h3>
+            <p>
+              It varies, but many owners work with us for 3–9 months. Intensives can create significant change faster, while ongoing coaching supports you as new challenges and opportunities appear.
+            </p>
+          </div>
+          <div class="faq-item">
+            <h3>What does a discovery call look like?</h3>
+            <p>
+              We’ll talk through where you’re at, what’s keeping you stuck, and what “firing yourself from the day-to-day” would look like in your world. You’ll leave with clarity on options, whether we work together or not.
+            </p>
+          </div>
+          <div class="faq-item">
+            <h3>Do you work with my leadership team as well?</h3>
+            <p>
+              Yes, where it makes sense. Many engagements involve key team members so the changes don’t just live in your head — they become how the whole business works.
+            </p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Contact -->
+    <section id="contact">
+      <div class="container contact-grid">
+        <div>
+          <div class="section-eyebrow">Contact</div>
+          <h2>Book your discovery call</h2>
+          <p>
+            If you’re ready to stop being the person who has to hold everything together, let’s talk. We’ll explore what’s happening in your business, what you’d like to change, and whether OutWin Solutions is the right partner to help.
+          </p>
+          <p>
+            Fill out the form and we’ll be in touch within one business day to confirm a time.
+          </p>
+
+          <div class="card" style="margin-top:1.1rem;">
+            <h3>Prefer to reach out directly?</h3>
+            <p>
+              Email: <a href="mailto:admin@OutWinSolutions.com.au">admin@OutWinSolutions.com.au</a><br />
+              Phone: <a href="tel:0431990454">0431 990 454</a>
+            </p>
+            <p style="font-size:0.9rem;color:#5a6c88;">
+              Based in Australia. Sessions available online to suit your schedule.
+            </p>
+          </div>
+        </div>
+
+        <form>
+          <h3 style="margin-top:0;margin-bottom:0.8rem;">Tell us a little about you</h3>
+          <label for="name">Name</label>
+          <input id="name" name="name" type="text" placeholder="Your name" />
+
+          <label for="email">Email</label>
+          <input id="email" name="email" type="email" placeholder="you@business.com" />
+
+          <label for="phone">Phone (optional)</label>
+          <input id="phone" name="phone" type="text" placeholder="Best number to reach you" />
+
+          <label for="stage">Business stage</label>
+          <select id="stage" name="stage">
+            <option value="">Select the closest fit</option>
+            <option value="5-10">Team of 5–10</option>
+            <option value="10-25">Team of 10–25</option>
+            <option value="25-plus">Team of 25+</option>
+            <option value="other">Other / not sure</option>
+          </select>
+
+          <label for="message">What’s happening in your business right now?</label>
+          <textarea id="message" name="message" placeholder="Share a little about your current challenges and what you’d like to be different."></textarea>
+          <div class="helper-text">
+            This doesn’t need to be perfect. A few sentences is plenty — we’ll unpack it together on the call.
+          </div>
+
+          <button class="btn-primary" type="submit" style="width:100%;">
+            Request a Discovery Call
+          </button>
+        </form>
+      </div>
+    </section>
+  </main>
+
+  <footer>
+    <div class="container footer-inner">
+      <div>© <span id="year"></span> OutWin Solutions. All rights reserved.</div>
+      <div class="footer-links">
+        <span>admin@OutWinSolutions.com.au</span>
+        <span>0431 990 454</span>
+      </div>
+    </div>
+  </footer>
+
+  <script>
+    // Set current year in footer
+    document.getElementById("year").textContent = new Date().getFullYear();
+  </script>
+</body>
+</html>
